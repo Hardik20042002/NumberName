@@ -1,0 +1,39 @@
+<html>
+<head> 
+<title>Numbername</title>
+</head> 
+<body>
+	<center>
+	<label for="num">Enter the number</label>
+	<input type="text" name="num" id="1" height="5" width="30">
+	<br><br>
+	<button onclick="sol()">click me</button>
+	</center>
+	<script>
+	function sol(){
+			var n=document.getElementById("1").value;
+		if(n<0){
+        	document.write("<center><h2>The number is out of range</h2></center>");
+		}
+		else{
+			var arr=new Array();
+			var res=new String();
+			var arr=["zero","one","two","three","four","five","six","seven","eight","nine"];
+		function numbername(n){
+        	if(n==0){
+                return;
+        	}
+        	res+=arr[n%10]+" ";
+        	n=Math.floor(n/10);
+        	return numbername(n);
+		}
+		numbername(n);
+		var a=res.split(" ");
+		a.reverse();
+		res=a.join("");
+		document.write("<center><h2>The number represented in words is </h2>"+"<h1><u>"+res+"</u></h1></center>");
+		}
+	}
+	</script>
+</body>
+</html>
